@@ -1,7 +1,7 @@
-vagrant_grizzly_install
+vagrant_mysql_drbd_pacemaker
 =======================
 
-This Vagrant script installs OpenStack Grizzly in a single-node environment using Vagrant, Puppet and Virtualbox.
+This Vagrant script installs 2 VM nodes using Vagrant, Puppet and Virtualbox. Both nodes operate a MySQL server on a redundant DRBD device. The MySQL server is reached on a virtual IP which is shared between nodes. When a MySQL node fails, Pacemaker switches control flow to the other node and organizes failover tasks.
 
 Prerequisites
 =======================
