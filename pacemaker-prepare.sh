@@ -28,4 +28,9 @@ sudo crm configure colocation c_mysql_on_drbd inf: g_mysql ms_drbd_mysql:Master
 #Configure order
 sudo crm configure order o_drbd_before_mysql inf: ms_drbd_mysql:promote g_mysql:start
 
+#Cleanup MySQL resource to let Pacemaker take over control 
+sudo crm resource cleanup p_mysql
+
+#sudo crm configure ms ms_mysql p_mysql meta clone-max=2
+
 fi
